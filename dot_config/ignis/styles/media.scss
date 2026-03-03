@@ -1,0 +1,16 @@
+.media-container {
+  background-color: green;
+  margin: variables.$margin;
+  min-width: 250px;
+
+  overflow: clip;
+
+  border-radius: 999px;
+}
+
+.player-item {
+  background-color: red;
+
+  min-width: 250px;
+  border-radius: 999px;
+}

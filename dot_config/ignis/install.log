@@ -1,0 +1,10 @@
+[15:25:48 2026-01-21] FETCHING Version 2.42.7
+[15:25:48 2026-01-21] CREATING /home/rohan/.spicetify
+[15:25:48 2026-01-21] DOWNLOADING https://github.com/spicetify/cli/releases/download/v2.42.7/spicetify-2.42.7-linux-amd64.tar.gz
+[15:25:48 2026-01-21] EXTRACTING /home/rohan/.spicetify/spicetify.tar.gz
+[15:25:48 2026-01-21] SETTING EXECUTABLE PERMISSIONS TO /home/rohan/.spicetify/spicetify
+[15:25:48 2026-01-21] REMOVING /home/rohan/.spicetify/spicetify.tar.gz
+[15:25:48 2026-01-21] spicetify path already set in /home/rohan/.bashrc, continuing...
+[15:25:48 2026-01-21] spicetify path already set in /home/rohan/.bash_profile, continuing...
+[15:25:48 2026-01-21] spicetify v2.42.7 was installed successfully to /home/rohan/.spicetify
+[15:25:48 2026-01-21] Run 'spicetify --help' to get started

@@ -1,0 +1,43 @@
+@use "variables";
+
+@import "date";
+@import "audio";
+@import "material";
+@import "island";
+@import "workspaces";
+@import "media";
+
+.bar {
+  margin: variables.$margin;
+}
+
+.test-slider {
+  padding: 0px;
+  margin: 20px;
+
+  trough {
+    min-width: 100px;
+
+    highlight {
+      border-radius: 0px;
+    }
+  }
+
+  slider {
+    min-height: 15px;
+    min-width: 2px;
+    margin: -8px 0px;
+    outline: 6px solid black;
+    outline-offset: 0px;
+    border-radius: 20px;
+    background-color: red;
+    transition: 100ms;
+  }
+}
+
+.information_panel {
+  min-height: variables.$bar-height;
+  background-color: red;
+  border-radius: variables.$radius;
+  padding: 1px;
+}

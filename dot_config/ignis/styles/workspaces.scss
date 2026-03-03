@@ -1,0 +1,43 @@
+.workspace-btn-container {
+  margin: variables.$margin;
+  background-color: black;
+  border-radius: 999px;
+}
+
+.workspace-btn {
+  all: unset;
+
+  background-color: black;
+  color: red;
+
+  border-radius: 999px;
+
+  margin: 0px;
+  padding: 0px;
+
+  min-height: 16px;
+  //min-width: 28px;
+  min-width: 35px;
+
+  &.active {
+    background-color: red;
+  }
+}
+
+.workspace-btn-label {
+  font-weight: 800;
+  font-size: 16px;
+
+  &.active {
+    color: blue;
+  }
+}
+
+.workspace-btn-inside-box {
+  margin-left: 5px;
+}
+
+.workspace-btn-icon {
+  margin: 16px -10px 0px 0px;
+  padding: 0px;
+}
