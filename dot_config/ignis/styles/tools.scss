@@ -1,0 +1,33 @@
+@import "colors.scss";
+
+.tools-container {
+  min-width: 10px;
+  border-radius: 999px;
+  margin: variables.$margin;
+
+  background-color: $primary_container;
+}
+
+.tools-icons {
+  color: $on_surface;
+  transition:
+    transform 120ms ease,
+    color 120ms ease;
+}
+
+.tools-btn {
+  all: unset;
+
+  border-radius: 999px;
+
+  transition: transform 80ms ease;
+}
+
+.tools-btn:hover {
+  background-color: rgba($on_surface, 0.08); // hover state layer
+}
+
+.tools-btn:active {
+  background-color: rgba($on_surface, 0.12); // pressed state layer
+  transform: scale(0.94);
+}

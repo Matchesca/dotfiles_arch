@@ -1,9 +1,5 @@
-@import "colors.scss";
-
-.island-container {
-  min-width: 650px;
+.widgets-container {
   min-height: variables.$bar-height;
   border-radius: variables.$radius;
   margin: variables.$margin;
-  background-color: $on_primary;
 }

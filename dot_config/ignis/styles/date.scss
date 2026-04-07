@@ -1,10 +1,14 @@
+@import "colors.scss";
+
 .clock_label {
   font-weight: 700;
   font-size: 18px;
+  color: $primary;
 }
 
 .date_label {
   font-size: 13px;
+  color: $primary;
 }
 
 .date_box {

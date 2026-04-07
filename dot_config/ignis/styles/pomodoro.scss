@@ -1,0 +1,46 @@
+@import "colors.scss";
+
+$ease-out-expo: cubic-bezier(0.05, 0.7, 0.1, 1);
+
+.pomodoro-container {
+  background-color: $tertiary_container;
+  border-radius: variables.$radius;
+
+  min-width: 140px;
+  color: $on_tertiary_container;
+
+  margin-right: 480px;
+
+  transition: all 400ms $ease-out-expo;
+}
+
+.pomodoro-btn {
+  all: unset;
+
+  transition:
+    color 300ms $ease-out-expo,
+    transform 200ms $ease-out-expo;
+
+  &:hover {
+    color: $tertiary;
+    // Slight "pop" effect
+    transform: scale(1.1);
+  }
+
+  &:active {
+    transform: scale(0.9);
+  }
+}
+
+.pomodoro-label {
+  margin-left: variables.$margin;
+  font-weight: 700;
+  font-size: 18px;
+}
+.pomodoro-start-btn {
+  margin-right: variables.$margin;
+}
+
+.pomodoro-start-btn:hover {
+  color: $tertiary;
+}

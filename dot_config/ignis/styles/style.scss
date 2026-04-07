@@ -6,6 +6,10 @@
 @import "island";
 @import "workspaces";
 @import "media";
+@import "tools";
+@import "systray";
+@import "pomodoro";
+@import "widgets";
 
 .bar {
   margin: variables.$margin;

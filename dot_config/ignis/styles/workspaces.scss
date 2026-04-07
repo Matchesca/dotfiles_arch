@@ -1,14 +1,15 @@
+@import "colors.scss";
+
 .workspace-btn-container {
   margin: variables.$margin;
-  background-color: black;
+  background-color: $primary_container;
   border-radius: 999px;
 }
 
 .workspace-btn {
   all: unset;
 
-  background-color: black;
-  color: red;
+  color: $on_surface;
 
   border-radius: 999px;
 
@@ -20,7 +21,7 @@
   min-width: 35px;
 
   &.active {
-    background-color: red;
+    background-color: $primary;
   }
 }
 
@@ -29,7 +30,7 @@
   font-size: 16px;
 
   &.active {
-    color: blue;
+    color: $on_primary;
   }
 }
 
