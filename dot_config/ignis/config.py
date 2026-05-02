@@ -5,6 +5,8 @@ from modules.clock import date_box
 # from modules.audio import Audio_Module
 from modules.dynamic_island.Island import DynamicIsland
 from modules.widgets.Widgets import WidgetWindow
+from modules.osd.Osd import OSDManager
+from modules.launcher.Launcher import Launcher
 from ignis.app import IgnisApp
 from ignis.icon_manager import IconManager
 import os
@@ -34,3 +36,4 @@ class Bar(widgets.Window):
 Bar(0)
 DynamicIsland(0)
 WidgetWindow(0)
+Launcher(0)
