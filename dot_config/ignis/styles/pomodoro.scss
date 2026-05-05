@@ -3,13 +3,13 @@
 $ease-out-expo: cubic-bezier(0.05, 0.7, 0.1, 1);
 
 .pomodoro-container {
-  background-color: $tertiary_container;
+  background-color: $on_tertiary_fixed;
   border-radius: variables.$radius;
 
   min-width: 140px;
   color: $on_tertiary_container;
 
-  margin-right: 480px;
+  margin-left: 800px;
 
   transition: all 400ms $ease-out-expo;
 }

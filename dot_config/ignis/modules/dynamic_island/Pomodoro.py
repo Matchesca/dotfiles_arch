@@ -2,7 +2,7 @@ from ignis import widgets
 from gi.repository import GLib
 
 
-class Pomodoro(widgets.EventBox):
+class Pomodoro(widgets.Revealer):
 
     def __init__(self):
         self.total_time = 50 * 60
@@ -29,12 +29,20 @@ class Pomodoro(widgets.EventBox):
             on_click=lambda x: self.toggle_timer()
         )
 
-        self.btn_box = widgets.EventBox(
+        self.btn_box = widgets.Box(
             child=[self.reset_button, play_pause_button]
         )
 
         super().__init__(
-            css_classes=["pomodoro-container"], child=[widgets.CenterBox(css_classes=["pomodoro-inside-box"], hexpand=True, start_widget=self.time_label, end_widget=self.btn_box)])
+            child=widgets.Box(css_classes=["pomodoro-container"], child=[widgets.CenterBox(css_classes=[
+                              "pomodoro-inside-box"], hexpand=True, start_widget=self.time_label, end_widget=self.btn_box)]),
+            transition_type='crossfade',
+            transition_duration=500,
+            reveal_child=True,
+        )
+
+    def toggle(self):
+        self.reveal_child = not self.reveal_child
 
     def toggle_timer(self):
         if not self.is_running:

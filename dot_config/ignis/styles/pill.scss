@@ -1,0 +1,10 @@
+@import "colors.scss";
+@import "variables.scss";
+
+.top-pill {
+  background-color: $on_primary_fixed;
+  color: $on_primary_container;
+  border-radius: variables.$radius;
+  padding-left: 4px;
+  padding-right: 4px;
+}

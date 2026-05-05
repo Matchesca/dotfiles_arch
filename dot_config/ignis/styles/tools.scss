@@ -5,11 +5,13 @@
   border-radius: 999px;
   margin: variables.$margin;
 
+  padding-left: 4px;
+  padding-right: 4px;
+
   background-color: $primary_container;
 }
 
 .tools-icons {
-  color: $on_surface;
   transition:
     transform 120ms ease,
     color 120ms ease;

@@ -8,14 +8,21 @@ class Tools(widgets.EventBox):
     def __init__(self):
 
         super().__init__(
-            spacing=12,
-            css_classes=["tools-container"],
+            spacing=6,
+            css_classes=["top-pill"],
             child=[widgets.Button(
+                   on_click=lambda _: None,
+                   css_classes=["tools-btn"],
+                   child=widgets.Icon(
+                       css_classes=["tools-icons"],
+                       image="timer-symbolic", pixel_size=22)),
+                   widgets.Button(
                 on_click=lambda _: self._on_screenshot(),
                 css_classes=["tools-btn"],
                 child=widgets.Icon(
                     css_classes=["tools-icons"],
-                    image="screenshot-region-symbolic", pixel_size=22))]
+                    image="screenshot-region-symbolic", pixel_size=22)),
+                   ]
         )
 
     def _on_screenshot(self):

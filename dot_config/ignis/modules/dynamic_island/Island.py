@@ -24,6 +24,6 @@ class DynamicIsland(widgets.Window):
                         Workspace(),
                     ]),
                 center_widget=Media(),
-                end_widget=widgets.Box(child=[Tray(), Tools()])
+                end_widget=widgets.Box(child=[])
             ),
         )

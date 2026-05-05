@@ -1,4 +1,5 @@
 from ignis.services.system_tray import SystemTrayService
+from ignis.services.system_tray import SystemTrayItem
 from ignis import widgets
 
 sys_tray = SystemTrayService.get_default()
@@ -10,7 +11,7 @@ class Tray(widgets.EventBox):
         self.items = {}
 
         super().__init__(
-            css_classes=["system-tray-box"],
+            css_classes=["top-pill"],
             spacing=10
         )
 
@@ -35,12 +36,12 @@ class Tray(widgets.EventBox):
 
 class TrayItem(widgets.Button):
 
-    def __init__(self, item):
+    def __init__(self, item: SystemTrayItem):
 
         tray_icon = widgets.Icon(
             css_classes=["system-tray-item-icon"],
-            image=item.icon,
-            pixel_size=16
+            image=item.bind("icon"),
+            pixel_size=20
         )
 
         super().__init__(
