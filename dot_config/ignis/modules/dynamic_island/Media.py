@@ -3,20 +3,27 @@ from ignis.services.mpris import MprisService
 from ignis.utils import Utils
 from utils.icons import getIcon
 from utils.color import get_colors
+from modules.dynamic_island.IslandManager import IslandWidget
+from modules.dynamic_island.Island import imanager
 
 mpris = MprisService.get_default()
 
 
-class Media(widgets.Overlay):
+class Media(IslandWidget):
     def __init__(self):
         self.factory = MediaFactory()
         self.players = {}
         self.active_player = None
+        self.main_overlay = widgets.Overlay(
+            css_classes=["media-container"], overflow="hidden")
 
-        super().__init__(css_classes=["media-container"], overflow="hidden")
+        super().__init__(
+            child=self.main_overlay, manager=imanager
+        )
 
         mpris.connect("player_added", lambda x,
                       player: self._add_player(player))
+        self.register()
 
     def _add_player(self, player, *_):
         item = PlayerItem(player, self.factory.get_strategy(player.identity))
@@ -32,13 +39,14 @@ class Media(widgets.Overlay):
                 previous_item, item))
 
         self.players[player] = item
-        self.add_overlay(item)
+        self.main_overlay.add_overlay(item)
+        self.request_show()
         player.connect("closed", lambda x: self._remove_player(player))
 
     def _remove_player(self, player):
         if player in self.players:
             item = self.players.pop(player)
-            self.remove_overlay(item)
+            self.main_overlay.remove_overlay(item)
 
             # if current active player is removed
             if self.active_player == item:
@@ -51,6 +59,7 @@ class Media(widgets.Overlay):
                     new_active.add_css_class("active")
                 else:
                     self.active_player = None
+                    self.request_hide()
             print(f"removed {player}")
 
     def _flash_animation(self, previous_item, new_item):

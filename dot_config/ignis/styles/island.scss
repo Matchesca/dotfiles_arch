@@ -1,7 +1,8 @@
 @import "colors.scss";
 
 .island-container {
-  min-width: 650px;
+  padding-left: 10px;
+  padding-right: 10px;
   min-height: variables.$bar-height;
   border-radius: variables.$radius;
   margin: variables.$margin;

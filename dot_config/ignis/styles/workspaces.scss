@@ -20,6 +20,10 @@
   //min-width: 28px;
   min-width: 35px;
 
+  &.passive {
+    background-color: $primary_container;
+  }
+
   &.active {
     background-color: $primary;
   }

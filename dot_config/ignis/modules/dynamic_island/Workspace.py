@@ -17,7 +17,7 @@ class Workspace(widgets.Box):
         self.active_title = hyprland.active_window.title
 
         super().__init__(
-            css_classes=["workspace-container"],
+            css_classes=["top-pill"],
             spacing=50,
             child=[widgets.Box(
                 css_classes=["workspace-btn-container"], child=self._create_workspace_buttons()),
@@ -86,6 +86,7 @@ class Workspace(widgets.Box):
             ws_id = win.workspace_id
             if 1 <= ws_id <= 5:
                 ws_icons[ws_id] = win.initial_class
+        print(ws_icons)
 
         # check for the active window and overwrite its icon
         if hyprland.active_window:
@@ -104,7 +105,14 @@ class Workspace(widgets.Box):
                 btn.remove_css_class("active")
                 label.remove_css_class("active")
 
-            # updating the icon
             new_icon = getIcon(ws_icons.get(i+1, ""))
+
+            # updating the active workspaces with some window on them indicator
+            if new_icon != "":
+                btn.add_css_class("passive")
+            if new_icon == "":
+                btn.remove_css_class("passive")
+
+            # updating the icon
             if icon.image != new_icon:
                 icon.image = new_icon

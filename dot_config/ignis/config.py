@@ -5,9 +5,11 @@ from modules.power import power_module
 # from modules.audio import Audio_Module
 from modules.dynamic_island.Island import DynamicIsland
 from modules.osd.Osd import OSDManager
+from modules.dynamic_island.Workspace import Workspace
 from modules.dynamic_island.Tools import Tools
 from modules.dynamic_island.SystemTray import Tray
 from modules.launcher.Launcher import Launcher
+from modules.widgets import *
 from ignis.app import IgnisApp
 from ignis.icon_manager import IconManager
 import os
@@ -29,7 +31,8 @@ class Bar(widgets.Window):
             exclusivity="exclusive",
             child=widgets.CenterBox(
                 css_classes=["bar"],
-                start_widget=date_box(),
+                start_widget=widgets.Box(
+                    spacing=6, child=[date_box(), Workspace()]),
                 end_widget=widgets.Box(
                     spacing=6, child=[Tray(), Tools(), power_module()]),
             ),
