@@ -11,6 +11,8 @@
 @import "systray";
 @import "pomodoro";
 @import "widgets";
+@import "./widget_styles/default_name";
+@import "./widget_styles/power_options";
 
 .bar {
   margin: variables.$margin;

@@ -18,7 +18,7 @@ class Media(IslandWidget):
             css_classes=["media-container"], overflow="hidden")
 
         super().__init__(
-            child=self.main_overlay, manager=imanager
+            child=self.main_overlay, manager=imanager, title="music-module"
         )
 
         mpris.connect("player_added", lambda x,

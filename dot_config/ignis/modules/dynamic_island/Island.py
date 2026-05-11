@@ -1,9 +1,8 @@
 from ignis import widgets
 from ignis.services.hyprland import HyprlandService
-from modules.dynamic_island.IslandManager import IslandManager
+from modules.dynamic_island.IslandManager import imanager
 
 hyprland = HyprlandService.get_default()
-imanager = IslandManager()
 
 
 class DynamicIsland(widgets.Window):
@@ -15,8 +14,11 @@ class DynamicIsland(widgets.Window):
             anchor=["top"],
             exclusivity="ignore",
             dynamic_input_region=True,
+            kb_mode="none",
             child=widgets.CenterBox(
                 css_classes=["island-container"],
                 center_widget=imanager.container
             ),
         )
+
+        imanager.set_iwindow(self)

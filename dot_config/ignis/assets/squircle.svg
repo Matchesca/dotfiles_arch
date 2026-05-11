@@ -1,0 +1,8 @@
+<svg index="0" width="1000" height="1000" viewBox="0 0 1000 1000" preserveAspectRatio="none">
+  <path d="M 500,0 
+           C 100,0 0,100 0,500 
+           0,900 100,1000 500,1000 
+           900,1000 1000,900 1000,500 
+           1000,100 900,0 500,0 Z" 
+        fill="black" />
+</svg>
