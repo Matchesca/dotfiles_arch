@@ -1,5 +1,6 @@
 import subprocess
 from ignis import widgets
+from modules.widgets import pomodoro_timer
 
 SCREENSHOT_OUTPUT = "~/Pictures"
 
@@ -11,7 +12,7 @@ class Tools(widgets.EventBox):
             spacing=6,
             css_classes=["top-pill"],
             child=[widgets.Button(
-                   on_click=lambda _: None,
+                   on_click=lambda _: pomodoro_timer.request_show(),
                    css_classes=["tools-btn"],
                    child=widgets.Icon(
                        css_classes=["tools-icons"],

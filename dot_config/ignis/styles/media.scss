@@ -33,17 +33,15 @@
   all: unset;
   margin: 2px;
 
-  .play-button {
+  .media-button {
     all: unset;
 
-    min-width: 20px;
-    border-radius: 6px;
+    padding: 4px;
 
-    background-color: green;
+    border-radius: 6px;
   }
 
   .button-label {
-    color: red;
   }
 }
 

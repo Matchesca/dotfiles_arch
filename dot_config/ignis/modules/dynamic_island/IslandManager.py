@@ -1,6 +1,6 @@
 from ignis import widgets
 
-# Priority: -1 default, 0 non-essential active, 1 notification, 2 urgent notification, 3 kb focus
+# Priority: -1 default, 0 non-essential active, 1 OSD, 2 notification, 3 urgent notification, 4 kb focus
 
 
 class IslandWidget(widgets.StackPage):
@@ -34,7 +34,7 @@ class IslandManager():
         self.active_widget = None
         self.iwindow = None
         self.kb_mode_window = "none"
-        self.widgets = {-1: [], 0: [], 1: [], 2: [], 3: []}
+        self.widgets = {-1: [], 0: [], 1: [], 2: [], 3: [], 4: []}
         self.container = widgets.Stack(
             transition_type="slide_down",
             transition_duration=300
@@ -47,10 +47,12 @@ class IslandManager():
         self.iwindow = iwindow
 
     def show(self, widget: IslandWidget):
+        self.container.set_visible_child_name(widget.widget_title)
+        self.container.grab_focus()
+
         if widget.needs_kb:
             self.iwindow.set_kb_mode("exclusive")
             widget.focus_for_kb()
-        self.container.set_visible_child_name(widget.widget_title)
 
     def hide(self, widget: IslandWidget):
         if widget.needs_kb:
@@ -66,6 +68,7 @@ class IslandManager():
     def _show_by_name(self, name):
         self.container.set_visible_child_name(name)
 
+    # Write an algorithm to figure out priorities and the best next widget to show, if nothing to show then default
     def _show_next(self, hiding_name: str):
         if len(self.widgets[0]) > 0:
             for w in self.widgets[0]:

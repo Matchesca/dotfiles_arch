@@ -3,8 +3,7 @@ from modules.clock import date_box
 from modules.power import power_module
 # from modules.network import network_module
 # from modules.audio import Audio_Module
-from modules.dynamic_island.Island import DynamicIsland
-from modules.osd.Osd import OSDManager
+from modules.dynamic_island.DynamicIsland import DynamicIsland
 from modules.dynamic_island.Workspace import Workspace
 from modules.dynamic_island.Tools import Tools
 from modules.dynamic_island.SystemTray import Tray
@@ -39,6 +38,6 @@ class Bar(widgets.Window):
         )
 
 
-DynamicIsland(0)
 Launcher(0)
+DynamicIsland(0)
 Bar(0)

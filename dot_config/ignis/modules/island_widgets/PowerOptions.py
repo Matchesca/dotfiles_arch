@@ -1,8 +1,7 @@
 import os
 from ignis import widgets
 from gi.repository import Gtk
-from modules.dynamic_island.Island import imanager
-from modules.dynamic_island.IslandManager import IslandWidget
+from modules.dynamic_island.IslandManager import IslandWidget, imanager
 
 
 class PowerOptionsWidget(IslandWidget):
@@ -22,7 +21,7 @@ class PowerOptionsWidget(IslandWidget):
             child=self.buttons
         )
         super().__init__(manager=imanager, child=self.main_box,
-                         title="power-options", needs_kb=True, priority=3)
+                         title="power-options", needs_kb=True, priority=4)
 
         self.register()
 
@@ -33,8 +32,6 @@ class PowerOptionsWidget(IslandWidget):
         key_controller.connect("key-pressed", self.on_key_pressed)
 
     def on_key_pressed(self, event_controller_key, keyval, keycode, state):
-        print("HEREEEEEEEE")
-        print(keyval, keycode, state)
         if keycode == 65289:
             self._handle_tab_input()
             return True

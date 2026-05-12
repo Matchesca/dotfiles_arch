@@ -3,8 +3,7 @@ from ignis.services.mpris import MprisService
 from ignis.utils import Utils
 from utils.icons import getIcon
 from utils.color import get_colors
-from modules.dynamic_island.IslandManager import IslandWidget
-from modules.dynamic_island.Island import imanager
+from modules.dynamic_island.IslandManager import IslandWidget, imanager
 
 mpris = MprisService.get_default()
 
@@ -82,7 +81,7 @@ class PlayerItem(widgets.Box):
         self.buttons_container = widgets.Box(
             css_classes=["button-container"],
             child=[widgets.Button(
-                css_classes=["play-button"],
+                css_classes=["media-button"],
                 child=widgets.Icon(
                     pixel_size=22,
                     css_classes=["button-label"], image=getIcon("play"))
@@ -91,7 +90,7 @@ class PlayerItem(widgets.Box):
 
         super().__init__(css_classes=["player-item"],
                          spacing=6,
-                         child=[self.title_art, self.title_icon, self.title_label])
+                         child=[self.title_art, self.title_icon, self.title_label, self.buttons_container])
 
         player.connect("notify::title", lambda x,
                        y: self._sync())
