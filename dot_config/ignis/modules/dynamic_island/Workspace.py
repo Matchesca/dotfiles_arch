@@ -85,13 +85,12 @@ class Workspace(widgets.Box):
         for win in windows:
             ws_id = win.workspace_id
             if 1 <= ws_id <= 5:
-                ws_icons[ws_id] = win.initial_class
-        print(ws_icons)
+                ws_icons[ws_id] = win.initial_class.lower()
 
         # check for the active window and overwrite its icon
         if hyprland.active_window:
             active_win_ws = hyprland.active_window.workspace_id
-            ws_icons[active_win_ws] = hyprland.active_window.initial_class
+            ws_icons[active_win_ws] = hyprland.active_window.initial_class.lower()
 
         # update the buttons
         for i, btn in enumerate(self.buttons):

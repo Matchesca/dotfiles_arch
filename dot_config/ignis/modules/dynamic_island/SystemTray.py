@@ -12,12 +12,14 @@ class Tray(widgets.EventBox):
 
         super().__init__(
             css_classes=["top-pill"],
-            spacing=10
+            spacing=8
         )
 
         sys_tray.connect("added", lambda x, item: self._on_added(item))
 
     def _on_added(self, item):
+        print(f"Tray item added: id={item.id}, title={
+              item.title}, icon={item.icon}")
         tray_item = TrayItem(item)
         self.items[item.id] = tray_item
         item.connect("removed", lambda x: self._on_removed(item.id))
@@ -40,8 +42,9 @@ class TrayItem(widgets.Button):
 
         tray_icon = widgets.Icon(
             css_classes=["system-tray-item-icon"],
-            image=item.bind("icon"),
-            pixel_size=20
+            image=item.bind(
+                "icon", transform=lambda icon: icon if icon else item.icon_name or "image-missing"),
+            pixel_size=26
         )
 
         super().__init__(

@@ -142,8 +142,8 @@ class BrowserStrategy(BaseMediaStrategy):
 
     def get_icon(self, player):
         return {
-            "type": "icon",
-            "source": getIcon("zen")
+            "type": "picture",
+            "source": player.art_url
         }
 
 
