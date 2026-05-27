@@ -4,11 +4,11 @@ from modules.power import power_module
 # from modules.network import network_module
 # from modules.audio import Audio_Module
 from modules.dynamic_island.DynamicIsland import DynamicIsland
-from modules.dynamic_island.Workspace import Workspace
-from modules.dynamic_island.Tools import Tools
-from modules.dynamic_island.SystemTray import Tray
+from modules.Workspace import Workspace
+from modules.Tools import Tools
+from modules.SystemTray import Tray
 from modules.launcher.Launcher import Launcher
-from modules.widgets import *
+from modules.island_widgets.widgets import *
 from ignis.app import IgnisApp
 from ignis.icon_manager import IconManager
 import os

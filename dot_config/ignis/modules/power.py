@@ -1,5 +1,5 @@
 from ignis import widgets
-from modules.widgets import power_options_widget
+from modules.island_widgets.widgets import power_options_widget
 
 
 def power_module() -> widgets.Widget:
