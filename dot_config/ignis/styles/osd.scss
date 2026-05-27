@@ -1,0 +1,13 @@
+@import "colors.scss";
+
+.OSD-container {
+  padding-left: 10px;
+  padding-right: 10px;
+  min-height: variables.$bar-height;
+  margin: variables.$margin;
+}
+
+.volume-box {
+  background-color: $on_primary_fixed;
+  border-radius: variables.$radius;
+}

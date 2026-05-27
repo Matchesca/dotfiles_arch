@@ -4,6 +4,7 @@
 @import "audio";
 @import "material";
 @import "island";
+@import "osd";
 @import "workspaces";
 @import "media";
 @import "tools";
@@ -11,6 +12,7 @@
 @import "systray";
 @import "pomodoro";
 @import "widgets";
+@import "colors.scss";
 @import "./widget_styles/default_name";
 @import "./widget_styles/power_options";
 
@@ -20,24 +22,31 @@
 
 .test-slider {
   padding: 0px;
-  margin: 20px;
+  margin: 14px;
 
   trough {
-    min-width: 100px;
+    min-width: 200px;
+    border-radius: 99px;
+    background-color: $on_primary_fixed_variant;
+
+    outline: none;
+    outline-width: 0px;
+    border: none;
+    border-style: none;
 
     highlight {
-      border-radius: 0px;
+      border-radius: 99px;
+      background-color: $primary;
     }
   }
 
   slider {
-    min-height: 15px;
+    min-height: 26px;
     min-width: 2px;
-    margin: -8px 0px;
-    outline: 6px solid black;
+    margin: -10px 0px;
+    outline: 4px solid $on_primary_fixed;
     outline-offset: 0px;
-    border-radius: 20px;
-    background-color: red;
+    border-radius: 28px;
     transition: 100ms;
   }
 }

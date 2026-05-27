@@ -3,12 +3,13 @@ from ignis.services.mpris import MprisService
 from ignis.utils import Utils
 from utils.icons import getIcon
 from utils.color import get_colors
-from modules.dynamic_island.IslandManager import IslandWidget, imanager
+from modules.dynamic_island.IslandManager import islandManager
+from modules.managers.Manager import ManagerWidget
 
 mpris = MprisService.get_default()
 
 
-class Media(IslandWidget):
+class Media(ManagerWidget):
     def __init__(self):
         self.factory = MediaFactory()
         self.players = {}
@@ -17,7 +18,7 @@ class Media(IslandWidget):
             css_classes=["media-container"], overflow="hidden")
 
         super().__init__(
-            child=self.main_overlay, manager=imanager, title="music-module"
+            child=self.main_overlay, manager=islandManager, title="music-module"
         )
 
         mpris.connect("player_added", lambda x,

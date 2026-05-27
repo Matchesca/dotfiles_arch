@@ -1,10 +1,11 @@
 import os
 from ignis import widgets
 from gi.repository import Gtk
-from modules.dynamic_island.IslandManager import IslandWidget, imanager
+from modules.dynamic_island.IslandManager import islandManager
+from modules.managers.Manager import ManagerWidget
 
 
-class PowerOptionsWidget(IslandWidget):
+class PowerOptionsWidget(ManagerWidget):
     def __init__(self):
         self.buttons = [
             widgets.Button(css_classes=[
@@ -20,7 +21,7 @@ class PowerOptionsWidget(IslandWidget):
             spacing=22,
             child=self.buttons
         )
-        super().__init__(manager=imanager, child=self.main_box,
+        super().__init__(manager=islandManager, child=self.main_box,
                          title="power-options", needs_kb=True, priority=4)
 
         self.register()

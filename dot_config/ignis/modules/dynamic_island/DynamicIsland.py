@@ -1,5 +1,5 @@
 from ignis import widgets
-from modules.dynamic_island.IslandManager import imanager
+from modules.dynamic_island.IslandManager import islandManager
 
 
 class DynamicIsland(widgets.Window):
@@ -13,6 +13,6 @@ class DynamicIsland(widgets.Window):
             kb_mode="none",
             child=widgets.CenterBox(
                 css_classes=["island-container"],
-                center_widget=imanager.container),
+                center_widget=islandManager.container)
         ),
-        imanager.set_iwindow(self)
+        islandManager.set_iwindow(self)

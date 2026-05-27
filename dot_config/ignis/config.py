@@ -1,14 +1,15 @@
 from ignis import widgets
+from modules.island_widgets.widgets import *
 from modules.clock import date_box
 from modules.power import power_module
 # from modules.network import network_module
 # from modules.audio import Audio_Module
 from modules.dynamic_island.DynamicIsland import DynamicIsland
+from modules.osd.OSDManager import OSD
 from modules.Workspace import Workspace
 from modules.Tools import Tools
 from modules.SystemTray import Tray
 from modules.launcher.Launcher import Launcher
-from modules.island_widgets.widgets import *
 from ignis.app import IgnisApp
 from ignis.icon_manager import IconManager
 import os
@@ -40,4 +41,5 @@ class Bar(widgets.Window):
 
 Launcher(0)
 DynamicIsland(0)
+OSD(0)
 Bar(0)

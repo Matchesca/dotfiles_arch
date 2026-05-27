@@ -1,9 +1,10 @@
 from ignis import widgets
-from modules.dynamic_island.IslandManager import imanager, IslandWidget
+from modules.dynamic_island.IslandManager import islandManager
+from modules.managers.Manager import ManagerWidget
 from gi.repository import GLib
 
 
-class Pomodoro(IslandWidget):
+class Pomodoro(ManagerWidget):
 
     def __init__(self):
         self.total_time = 50 * 60
@@ -40,7 +41,7 @@ class Pomodoro(IslandWidget):
         super().__init__(
             child=self.main_box,
             title="pomodoro-timer",
-            manager=imanager
+            manager=islandManager
         )
 
         self.register()
