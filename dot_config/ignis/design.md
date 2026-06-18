@@ -1,3 +1,5 @@
+!This is not meant for agentic coding, but only for myself
+
 ## Island Manager
 
 - This class should manage the visible widget on the dynamic island.

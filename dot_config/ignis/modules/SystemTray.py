@@ -12,7 +12,8 @@ class Tray(widgets.EventBox):
 
         super().__init__(
             css_classes=["top-pill"],
-            spacing=8
+            spacing=8,
+            visible=False
         )
 
         sys_tray.connect("added", lambda x, item: self._on_added(item))
@@ -23,6 +24,7 @@ class Tray(widgets.EventBox):
         tray_item = TrayItem(item)
         self.items[item.id] = tray_item
         item.connect("removed", lambda x: self._on_removed(item.id))
+        self.visible = True
         self._render()
 
     def _on_removed(self, id):
